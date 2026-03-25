@@ -537,10 +537,22 @@ console.log(html_template);
     <section id="bagis" class="py-5 bg-light">
         <div class="container">
             <h2 class="section-title">Umut Olmak İçin Destek Ol</h2>
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8 text-center">
+                    <p class="text-muted mb-3">Uluslararası platformlar üzerinden tek tıkla destek olabilirsiniz:</p>
+                    <a href="https://gofund.me/955d6642e" target="_blank" class="btn btn-lg mx-2 mb-2 shadow-sm text-white" style="background-color: #00b964; border-radius: 50px; padding: 10px 25px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        <i class="fas fa-heart me-2"></i> GoFundMe ile Bağış Yap
+                    </a>
+                    <a href="https://www.paypal.com/donate?campaign_id=45MZ43KWBJGGG" target="_blank" class="btn btn-warning btn-lg mx-2 mb-2 shadow-sm" style="color: #003087; font-weight: bold; border-radius: 50px; padding: 10px 25px; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+                        <i class="fab fa-paypal me-2"></i> PayPal ile Bağış Yap
+                    </a>
+                </div>
+            </div>
+
             <div class="row justify-content-center">
-                
                 <div class="col-md-4 mb-3">
-                    <div class="iban-box" onclick="copyToClipboard('TR850001000052908588945002')">
+                    <div class="iban-box" onclick="copyToClipboard('TR850001000052908588945002', 'TL Hesabı')">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h5 class="mb-1"><i class="fas fa-lira-sign me-2"></i>TL Hesabı</h5>
@@ -552,7 +564,7 @@ console.log(html_template);
                 </div>
 
                 <div class="col-md-4 mb-3">
-                    <div class="iban-box" onclick="copyToClipboard('TR310001000052908588945004')">
+                    <div class="iban-box" onclick="copyToClipboard('TR310001000052908588945004', 'USD Hesabı')">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h5 class="mb-1"><i class="fas fa-dollar-sign me-2"></i>USD Hesabı</h5>
@@ -564,7 +576,7 @@ console.log(html_template);
                 </div>
 
                 <div class="col-md-4 mb-3">
-                    <div class="iban-box" onclick="copyToClipboard('TR580001000052908588945003')">
+                    <div class="iban-box" onclick="copyToClipboard('TR580001000052908588945003', 'EURO Hesabı')">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <h5 class="mb-1"><i class="fas fa-euro-sign me-2"></i>EURO Hesabı</h5>
@@ -575,22 +587,74 @@ console.log(html_template);
                     </div>
                 </div>
 
-                <div class="col-lg-8 col-12">
+                <div class="col-lg-8 col-12 mb-4">
                     <div class="swift-section" onclick="copyToClipboard('TCZBTR2A', 'SWIFT / BIC')">
                         <div class="swift-text-group">
                         <span class="swift-label">
                             <i class="fas fa-globe me-2"></i> Yurt Dışı (SWIFT / BIC)
                         </span>
-                        <span class="swift-number">TCZBTR2A</span> </div>
+                            <span class="swift-number">TCZBTR2A</span> </div>
                         <i class="far fa-copy fa-2x swift-icon"></i>
                     </div>
                 </div>
-
             </div>
-            <div class="text-center mt-4">
-                <p class="text-danger fw-bold">* Alıcı: SUAT TERZİ</p>
+
+            <div class="text-center mb-5">
+                <p class="text-danger fw-bold mb-1">* Alıcı: SUAT TERZİ</p>
                 <p class="text-danger fw-bold">* Açıklama: Ata Can Bağış</p>
             </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-12">
+                    <div class="card border-0 shadow-sm" style="border-left: 5px solid var(--primary-color);">
+                        <div class="card-body p-4">
+                            <h5 class="card-title text-dark mb-4 fw-bold">
+                                <i class="fas fa-shield-halved me-2" style="color: var(--primary-color);"></i> SMA Children Vakfı Güvencesiyle (Hollanda)
+                            </h5>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6 mb-3 mb-md-0">
+                                    <div class="iban-box bg-white" onclick="copyToClipboard('NL37BUNQ2184228230', 'Hollanda IBAN')">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1"><i class="fas fa-landmark me-2"></i>IBAN (EUR)</h6>
+                                                <p class="mb-0 text-muted small fw-bold">NL37 BUNQ 2184 2282 30</p>
+                                            </div>
+                                            <i class="far fa-copy fa-lg copy-btn"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="iban-box bg-white" onclick="copyToClipboard('BUNQNL2A', 'Hollanda SWIFT')">
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1"><i class="fas fa-globe me-2"></i>SWIFT / BIC</h6>
+                                                <p class="mb-0 text-muted small fw-bold">BUNQNL2A</p>
+                                            </div>
+                                            <i class="far fa-copy fa-lg copy-btn"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-light p-3 rounded border border-light">
+                                <div class="d-flex justify-content-between align-items-center mb-2 pb-2 border-bottom">
+                                    <span class="text-dark"><strong>Alıcı (Name):</strong> Sma Children</span>
+                                    <button class="btn btn-sm btn-outline-success border-0" onclick="copyToClipboard('Sma Children', 'Alıcı Adı')"><i class="far fa-copy me-1"></i> Kopyala</button>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="text-dark"><strong>Açıklama (Omschrijving):</strong> Ata Can Terzi</span>
+                                    <button class="btn btn-sm btn-outline-success border-0" onclick="copyToClipboard('Ata Can Terzi', 'Açıklama')"><i class="far fa-copy me-1"></i> Kopyala</button>
+                                </div>
+                            </div>
+                            <div class="mt-3 text-center">
+                                <small class="text-danger fw-bold"><i class="fas fa-exclamation-triangle me-1"></i> Yurt dışı transferlerinde açıklamaya (Omschrijving) sadece "Ata Can Terzi" yazmayı unutmayın!</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
